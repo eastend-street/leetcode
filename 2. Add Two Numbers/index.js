@@ -22,7 +22,9 @@ var addTwoNumbers = function(l1, l2) {
   let result = []
   const resultStr =  String(convertToNum(l1) + convertToNum(l2)).split("")
   for(let i =0; i < resultStr.length; i++){
-      result.push(Number(resultStr[i]))
+    result.push(Number(resultStr[i]))
+    // result.val = result.push(Number(resultStr[i]))
+    // result = result.next
   }
   return result;
 };
