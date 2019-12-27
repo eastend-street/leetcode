@@ -33,7 +33,6 @@ const squareMatrix = num => {
   while (startCol <= endCol && startRow <= endRow) {
     // left to right
     for (let i = startCol; i < endCol; i++) {
-      //   result[startRow].push(count);
       result[startRow].splice(i, 0, count);
       count++;
     }
@@ -48,17 +47,15 @@ const squareMatrix = num => {
 
     // // right to left
     for (let i = endCol; i > startCol; i--) {
-      result[endRow - 1].unshift(count);
-    //   result[endRow - 1].splice(-(num - i), 0, count);
+      result[endRow - 1].splice(-(num - i), 0, count);
       count++;
     }
 
     endRow--;
 
-    // // bottom to top
+    // bottom to top
     for (let i = endRow; i > startRow; i--) {
-      result[i - 1].unshift(count);
-      //   result[i - 1].splice(-startRow, 0, count);
+      result[i - 1].splice(startCol, 0, count);
       count++;
     }
     startCol++;
@@ -66,4 +63,4 @@ const squareMatrix = num => {
   return result;
 };
 
-console.log(squareMatrix(3));
+console.log(squareMatrix(5));
