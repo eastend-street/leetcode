@@ -1,3 +1,5 @@
+// not resolved
+
 function TreeNode(val) {
   this.val = val;
   this.left = this.right = null;
@@ -16,18 +18,27 @@ treeNode.left = left;
 treeNode.right = right;
 
 var longestUnivaluePath = function(root) {
-  console.log(root);
-  const result = helper(root, 0);
-  return result;
-};
+  let max = 0;
+  const helper = (parentVal, childTree) => {
+    if (childTree === null) return 0;
 
-const helper = (tree, count) => {
-    if(!tree.right && !this.left) return 0;
-    
-    if(this.left){
-        
+    let leftCount = helper(childTree.val, childTree.left);
+    let rightCount = helper(childTree.val, childTree.right);
+
+    max = Math.max(max, leftCount + rightCount);
+    if (parentVal === childTree.val) {
+      console.log(leftCount);
+      return Math.max(leftCount, rightCount) + 1;
+    } else {
+      return 0;
     }
-    return count += 1;
+  };
+
+  helper(root.val, root);
+  return max;
 };
 
 console.log(longestUnivaluePath(treeNode));
+
+// それぞれのノードで判断するのは、自分が折り返しだとしたときに何個つながっているか
+// 子ノードの折り返しは、子ノードが判断するので、書く必要はない

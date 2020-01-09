@@ -1,3 +1,5 @@
+// not resolved
+
 function TreeNode(val) {
   this.val = val;
   this.left = this.right = null;
@@ -16,12 +18,13 @@ treeNode.left = left;
 treeNode.right = right;
 
 var longestUnivaluePath = function(root) {
-  const result = helper(root, 0);
+  const result = helper(root, 1);
   return result;
 };
 
 const helper = (tree, count) => {
-  if (!tree) return 0;
+  if (!tree.right) return count;
+  if (!tree.left) return count;
 
   if (tree.right.val === tree.val) {
     console.log("right");
