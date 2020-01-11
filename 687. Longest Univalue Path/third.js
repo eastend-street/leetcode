@@ -17,8 +17,10 @@ treeNode.right = right;
 
 var longestUnivaluePath = function(root) {
   let max = 0;
-  const helper = (parentVal, childTree) => {
+  const helper = (node) => {
     
+    // return is left or right
+    return 
   };
 
   helper(root);
