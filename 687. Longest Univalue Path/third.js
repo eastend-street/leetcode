@@ -1,4 +1,5 @@
 // need to understand why it needs maxLeft and maxRight
+// resolved
 
 function TreeNode(val) {
   this.val = val;
