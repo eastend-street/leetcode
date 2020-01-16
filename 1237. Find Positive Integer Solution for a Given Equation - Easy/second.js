@@ -21,12 +21,12 @@ var findSolution = function(customfunction, z) {
     
     for(let x = 1; x < 1000; x++){
         for(let y = 1; y < 1000; y++){            
-            const fuccResult = customfunction.f(x,y)
-            if(fuccResult === z){
+            const funcResult = customfunction.f(x,y)
+            if(funcResult === z){
                 result.push([x,y])
                 break;
             }
-            if(fuccResult > z){
+            if(funcResult > z){
                 break;
             }
         }
