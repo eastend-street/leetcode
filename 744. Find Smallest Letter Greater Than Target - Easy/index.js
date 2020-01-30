@@ -12,21 +12,19 @@ function nextGreatestLetter(letters, target) {
   let right = letters.length - 1;
 
   while (left <= right) {
-    let mid = Math.floor(left + right / 2);
-    console.log(letters, letters[mid], mid);
-    if (mid === 0) return letters[mid + 1];
-    if (letters[mid] === target) {
-      console.log("fafa");
-      return letters[mid + 1];
+    let mid = Math.floor((left + right) / 2);
+
+    if (target < letters[mid] && letters[mid - 1] <= target) {
+      return letters[mid];
     }
 
-    if (letters[mid] < target) {
+    if (letters[mid] <= target) {
       left = mid + 1;
     } else {
       right = mid - 1;
     }
   }
-  return letters[0];
+  return letters[0]
 }
 
-console.log(nextGreatestLetter(["c", "f", "j"], "d"));
+console.log(nextGreatestLetter(["e","e","e","e","e","e","n","n","n","n"], "e"));
