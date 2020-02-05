@@ -10,8 +10,8 @@
  * @return {number}
  */
 function sumOfLeftLeaves(root) {
-  if (!root) return 0;
-  if (!root.left && !root.right) return 0;
+  // if (!root) return 0;
+  // if (!root.left && !root.right) return 0;
 
   const helper = (node, isLeft) => {
     if (!node) {
@@ -24,8 +24,7 @@ function sumOfLeftLeaves(root) {
         return 0;
       }
     }
-    let helperSum = 0;
-    return (helperSum += helper(node.right, false) + helper(node.left, true));
+    return helper(node.right, false) + helper(node.left, true);
   };
   return helper(root, false);
 }
