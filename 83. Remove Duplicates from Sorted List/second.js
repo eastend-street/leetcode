@@ -10,7 +10,7 @@
  * @return {ListNode}
  */
 function deleteDuplicates(head) {
-  if (!head || !head.next) return head;
+  if (!head) return head;
   let pointer = head;
   while (pointer != null && pointer.next != null) {
     if (pointer.val === pointer.next.val) {
