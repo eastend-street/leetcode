@@ -22,8 +22,14 @@ const originalList = [
 ];
 
 const insertionSort = list => {
-
-  return list;
+  const arr = [];
+  for (let i = 0; i < list.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if(arr)
+      arr.push(list[i]);
+    }
+  }
+  return arr;
 };
 
 console.log(insertionSort(originalList));
