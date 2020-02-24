@@ -1,4 +1,5 @@
 // accepted but time complexity is slow
+// dynamic programming
 const uniquePaths = (m, n) => {
   if (m === 0 || n === 0) return 0; // エッジケース(長さが0の場合)は0を返す　
 
