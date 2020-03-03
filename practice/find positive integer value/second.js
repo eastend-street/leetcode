@@ -22,3 +22,16 @@ const solution = A => {
 // };
 console.log(solution([1000000]));
 console.log(solution([1, 3, 6, 4, 1, 2]));
+
+
+// Leetcode: 41. First Missing Positive
+// https://leetcode.com/problems/first-missing-positive/
+// sortをしない方法
+// 最初から順に見ていって、見ている数字のindexと交換する
+// [2,4,1] → [4, 2, 1] （2を２番目に持って行き、そこにあった4は2のあった位置に移動）
+// -があった場合はそのまま続ける
+// 最後にindexと噛み合わない数字が答え
+// [2,4,1]→[4,2,1]→[1,2,4]（4のところには本来3が入るので、3が答え）
+
+// 解法
+// https://leetcode.com/problems/first-missing-positive/discuss/17071/My-short-c%2B%2B-solution-O(1)-space-and-O(n)-time
