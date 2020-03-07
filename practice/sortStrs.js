@@ -10,6 +10,10 @@ const sortStrs1 = str => {
   });
 };
 
+
+
+
+
 // Make new array version
 //O(n)
 const sortStrs2 = str => {
@@ -22,7 +26,16 @@ const sortStrs2 = str => {
   return result;
 };
 
+[Thi1s,is2,,,]
+
+if2
+
+[is2, Thi1s, T4est, 3a]
+
+is2
+2
 console.log(sortStrs2("is2 Thi1s T4est 3a"));
+
 
 // Binary searchの解説
 // [1,2,3,4,5,6,7,8,9,10]
@@ -30,3 +43,6 @@ console.log(sortStrs2("is2 Thi1s T4est 3a"));
 // [8,9,10]
 // [9,10]
 // [10]
+
+
+divArr.
