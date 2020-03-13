@@ -1,8 +1,8 @@
 const containsDuplicate = nums => {
-  nums.sort((a, b) => (a < b ? -1 : 1));
-
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i + 1]) return true;
+  const set = new Set();
+  for (const num of nums) {
+    if (set.has(num)) return true;
+    set.add(num);
   }
   return false;
 };
