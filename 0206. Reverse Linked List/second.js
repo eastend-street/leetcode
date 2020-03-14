@@ -20,3 +20,16 @@ function reverseList(head) {
     head.next = null
     return node
 };
+
+
+//　currentの次の値を保存しておく (tmp = 2)
+
+// temp = 2
+// 1 -> null
+// prev = 1
+// current = 2
+
+// temp = 3
+// 2 ->1
+// prev = 2
+// current = 3
