@@ -1,28 +1,48 @@
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
+// hash table
+const hasCycle = head => {
+  if (!head?.next) return false;
+  let current = head;
+  let nodeSet = new Set();
 
-/**
- * @param {ListNode} head
- * @return {boolean}
- */
-// linked-listを最後までたどる
-// 最後の先が、今までの数字にあるかチェック
-// あればその値のindexがpos　なけれな-1で
-function hasCycle(head) {
-  const array = [];
-  const helper = node => {
-    if (!node || !node.next) return false;
-    // console.log(array.indexOf(node.next.val) >= 0)
-    if (array.indexOf(node.next.val) >= 0) return true;
-    array.push(node.val);
-    console.log(array);
-    return helper(node.next);
-  };
+  while (current.next) {
+    if (nodeSet.has(current.next)) {
+      return true;
+    } else {
+      nodeSet.add(current);
+    }
+    current = current.next;
+  }
+  return false;
+};
 
-  return helper(head);
-}
+// two pointers
+const hasCycle = head => {
+  if (!head?.next || !head?.next?.next) return false;
+
+  let slow = head.next;
+  let fast = head.next.next;
+  while (fast?.next || fast?.next?.next) {
+    if (slow === fast) {
+      return true;
+    }
+
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  return false;
+};
+
+// references (no optional chaining)
+// http://leetcode.com/problems/linked-list-cycle/discuss/226855/JavaScript
+const hasCycle = head => {
+  let slow = head;
+  let fast = head;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (slow === fast) return true;
+  }
+  return false;
+};

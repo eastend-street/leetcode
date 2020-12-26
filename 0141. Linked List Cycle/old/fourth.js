@@ -1,3 +1,4 @@
+
 // 見ないでやったパターン
 // whileを抜けたときにtrueで、while内でnullが見つかった時にfalseの方が早めにチェックできる
 const hasCycle = head => {
