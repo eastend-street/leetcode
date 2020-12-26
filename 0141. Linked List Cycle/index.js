@@ -16,7 +16,7 @@ const hasCycle = head => {
 };
 
 // two pointers
-const hasCycle = head => {
+const hasCycle2 = head => {
   if (!head?.next || !head?.next?.next) return false;
 
   let slow = head.next;
@@ -35,7 +35,7 @@ const hasCycle = head => {
 
 // references (No optional chaining)
 // http://leetcode.com/problems/linked-list-cycle/discuss/226855/JavaScript
-const hasCycle = head => {
+const hasCycle3 = head => {
   let slow = head;
   let fast = head;
   while (fast && fast.next) {
