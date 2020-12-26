@@ -33,7 +33,7 @@ const hasCycle = head => {
   return false;
 };
 
-// references (no optional chaining)
+// references (No optional chaining)
 // http://leetcode.com/problems/linked-list-cycle/discuss/226855/JavaScript
 const hasCycle = head => {
   let slow = head;
@@ -46,3 +46,4 @@ const hasCycle = head => {
   }
   return false;
 };
+
