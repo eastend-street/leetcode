@@ -1,33 +1,34 @@
+/**
+ * @param {string} beginWord
+ * @param {string} endWord
+ * @param {string[]} wordList
+ * @return {number}
+ */
 const ladderLength = (beginWord, endWord, wordList) => {
-  const arrBegin = beginWord.split("");
-  const arrEnd = endWord.split("");
-  let count = 0;
-  for (let i = 0; i < arrBegin.length; i++) {
-    for (let j = 0; j < arrBegin.length; j++) {
-      count = Math.max(count, search(i, j, arrBegin, arrEnd, wordList));
+  const beginWordArray = beginWord.split('');
+  const endWordArray = endWord.split('');
+
+  const count = 0;
+
+  const queue = [];
+  wordList.forEach((word) => {
+    if (isOneCharacterDifference(beginWord, word)) {
+      queue.push(word);
     }
-  }
-  return;
+  });
+
+  console.log(queue);
+  return count;
 };
 
-const search = (i, j, arrBegin, arrEnd, wordList) => {
-    let count = 0;
-    if(!arrBegin[i] || arrEnd[j]){
-        
-    }
-    return count
+const isOneCharacterDifference = (wordA, wordB) => {
+  const wordAArray = wordA.split('');
+  const wordBArray = wordB.split('');
+  let diffCharacterCount = 0;
+  wordAArray.forEach((characterA, index) => {
+    if (characterA !== wordBArray[index]) diffCharacterCount++;
+  });
+  return diffCharacterCount === 1;
 };
 
-// Input:
-// beginWord = "hit",
-// endWord = "cog",
-// wordList = ["hot","dot","dog","lot","log","cog"]
-
-// Output: 5
-
-// Explanation: As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
-// return its length 5.
-
-console.log(
-  ladderLength("hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"])
-);
+console.log(ladderLength('hit', 'cog', ['hot', 'dot', 'dog', 'lot', 'log']));

@@ -10,11 +10,6 @@
  * @return {number}
  */
 const maxDepth = (root) => {
-  const helper = (root, count) => {
-    if (!root?.val && root?.val !== 0) return count;
-    return (
-      count + 1 + Math.max(helper(root.left, count), helper(root.right, count))
-    );
-  };
-  return helper(root, 0);
+  if (!root) return 0;
+  return Math.max(maxDepth(root.right), maxDepth(root.left)) + 1;
 };
