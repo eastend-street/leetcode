@@ -8,3 +8,4 @@ const minDepth = (root) => {
   return Math.min(minDepth(root.right), minDepth(root.left)) + 1;
 };
 ï;
+

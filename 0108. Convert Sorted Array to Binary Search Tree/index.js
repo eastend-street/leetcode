@@ -1,28 +1,13 @@
-function TreeNode(val) {
-  this.val = val;
-  this.left = this.right = null;
-}
-/**
- * @param {number[]} nums
- * @return {TreeNode}
- */
-var sortedArrayToBST = function(nums) {
-  const root = makeNode(nums, 0, nums.length - 1);
-  return root;
-};
+const sortedArrayToBST = (nums) => {
+  if (nums.length === 0) return null;
 
-const makeNode = (list, startIndex, endIndex) => {
-  const middle = Math.floor((startIndex + endIndex) / 2);
-  const root = new TreeNode(list[middle]);
-  if (startIndex === endIndex) {
-    return new TreeNode(list[startIndex]);
-  }
-  if (startIndex > endIndex) {
-    return null;
-  }
-  root.left = makeNode(list, startIndex, middle - 1);
-  root.right = makeNode(list, middle + 1, endIndex);
-  return root;
-};
+  const node = {};
+  const mid = Math.floor(nums.length / 2);
+  const leftArray = nums.slice(0, mid);
+  const rightArray = nums.slice(mid + 1, nums.length);
+  node.val = nums[mid];
+  node.left = sortedArrayToBST(leftArray);
+  node.right = sortedArrayToBST(rightArray);
 
-console.log(sortedArrayToBST([-21, -15, -16, -10, -3, 0, 5, 9, 10]));
+  return node;
+};
