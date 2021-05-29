@@ -3,6 +3,7 @@ const uniquePathsWithObstacles = (obstacleGrid) => {
   obstacleGrid.forEach((y, i) => {
     y.forEach((x, j) => {
       if (x === 1) {
+        // When there is an obstacle
         cache[i][j] = 0;
       } else if (i === 0 && j === 0) {
         cache[i][j] = 1;
